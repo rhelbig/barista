@@ -68,7 +68,7 @@ namespace WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8d04cfd8-6d6d-42f5-b286-90f79e5340dc"),
+                            Id = new Guid("6cefff5e-5cec-4920-893e-000204701754"),
                             AlcContent = 5.5,
                             Company = "Paulaner Brauerei Gmbh",
                             CompanyLocation = "Germany",
@@ -84,7 +84,7 @@ namespace WebAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2a71af5b-d6da-4aaf-8974-d2aed1de0078"),
+                            Id = new Guid("427036e8-1e1e-4503-8b90-a0f4f235669c"),
                             AlcContent = 5.5,
                             Company = "Faxe",
                             CompanyLocation = "Denmark",
@@ -100,7 +100,7 @@ namespace WebAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("60923147-c85a-469e-bc19-fdc7e5ffb379"),
+                            Id = new Guid("3637863a-7115-4b78-ae42-873f222c1802"),
                             AlcContent = 8.5,
                             Company = "Relax",
                             CompanyLocation = "Mosel, Germany",
@@ -116,7 +116,7 @@ namespace WebAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("209a7eea-8d2f-497c-9899-f324d93fc4bc"),
+                            Id = new Guid("92a079bc-fe7b-490f-9ad8-282e077392f1"),
                             AlcContent = 14.0,
                             Company = "Compania Vitivinicola Tandem S",
                             CompanyLocation = "Navarra, Spain",
@@ -132,7 +132,7 @@ namespace WebAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c4cb6345-f9e4-4e18-8194-645d575ef548"),
+                            Id = new Guid("31726ceb-6c66-42fe-887b-c2ab1ee886a3"),
                             AlcContent = 0.0,
                             Company = "Smiling Tiger",
                             CompanyLocation = "Kitchener",
@@ -141,14 +141,14 @@ namespace WebAPI.Migrations
                             Image = "Resources/Images/smiling-tiger-late.png",
                             LastUpdatedBy = 0,
                             LastUpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Dark caffee late",
+                            Name = "Latte",
                             Price = 4.2000000000000002,
                             SizeInMl = 120,
                             Style = "Late"
                         },
                         new
                         {
-                            Id = new Guid("184211bc-d904-4b75-8268-e788b82dfeef"),
+                            Id = new Guid("7de11824-9a61-4a78-b858-66d49a892ad0"),
                             AlcContent = 9.0,
                             Company = "Ruedesheimer Schloss",
                             CompanyLocation = "Ruedesheim, Germany",
@@ -157,7 +157,7 @@ namespace WebAPI.Migrations
                             Image = "Resources/Images/ruedesheimer-coffee-asbach.jpg",
                             LastUpdatedBy = 0,
                             LastUpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Ruedesheimer Kafe",
+                            Name = "Ruedesheimer Coffee",
                             Price = 12.44,
                             SizeInMl = 140,
                             Style = "Coffee with brandy"

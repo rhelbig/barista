@@ -161,7 +161,12 @@ export class AddDrinkComponent implements OnInit {
     this.idrink.company = this.Company.value;
     this.idrink.companyLocation = this.CompanyLocation.value;
     this.idrink.description = this.Description.value;
-    this.idrink.image = this.imageUploadResponse.dbPath;
+    if(this.imageUploadResponse){
+      this.idrink.image = this.imageUploadResponse.dbPath;
+    } else {
+      this.idrink.image = '';
+    }
+
   }
 
   public uploadFinished = (event) => {
