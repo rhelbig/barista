@@ -66,7 +66,7 @@ namespace WebAPI.Models.configurations
                 new DrinkModel{
                     Id = Guid.NewGuid(),
                     DrinkType = 3,
-                    Name = "Dark caffee late",
+                    Name = "Latte",
                     Style = "Late",
                     SizeInMl = 120,
                     AlcContent = 0,
@@ -79,7 +79,7 @@ namespace WebAPI.Models.configurations
                 new DrinkModel{
                     Id = Guid.NewGuid(),
                     DrinkType = 3,
-                    Name = "Ruedesheimer Kafe",
+                    Name = "Ruedesheimer Coffee",
                     Style = "Coffee with brandy",
                     SizeInMl = 140,
                     AlcContent = 9,

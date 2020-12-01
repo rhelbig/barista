@@ -2,10 +2,10 @@
   <div class="col-sm-4 p-0">
     <div class="card">
       <div class="car-img-wrapper">
-        <img *ngIf="drink.image" src="assets/drinks/{{drink.image}}">
-        <img *ngIf="!drink.image && drink.drinkType==1" src="assets/drinks/beer-default.gif">
-        <img *ngIf="!drink.image && drink.drinkType==2" src="assets/drinks/wine-default.png">
-        <img *ngIf="!drink.image && drink.drinkType==3" src="assets/drinks/coffee-default.png">
+        <img *ngIf="drink.image" [src]="createImgPath(drink.image)">
+        <img *ngIf="!drink.image && drink.drinkType==1" src="http://localhost:5000/Resources/DefaultImages/beer-default.gif">
+        <img *ngIf="!drink.image && drink.drinkType==2" src="http://localhost:5000/Resources/DefaultImages/wine-default.png">
+        <img *ngIf="!drink.image && drink.drinkType==3" src="http://localhost:5000/Resources/DefaultImages/coffee-default.png">
 
       </div>
       <div class="card-body">

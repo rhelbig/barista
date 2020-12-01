@@ -52,6 +52,10 @@ export class DrinkDetailsComponent implements OnInit {
     this.router.navigate(['property-detail', this.drinkId]);
   }
 
+  public createImgPath = (serverPath: string) => {
+    return `http://localhost:5000/${serverPath}`;
+  }
+
 
 
 
