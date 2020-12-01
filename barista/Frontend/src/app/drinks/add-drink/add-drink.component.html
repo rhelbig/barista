@@ -1,0 +1,151 @@
+<div class="row">
+  <div class="col-8 shadow-lg p-0 row-width-control-large">
+    <div class="card">
+      <div class="card-header">
+        <h3>
+          Add a drink to our list!
+        </h3>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit) = 'onSubmit()' [formGroup]="addDrinkForm">
+          <div>
+            <tabset #formTabs>
+              <tab heading="Basic Info" formGroupName="Overview">
+                <div class="form-group col-12">
+                  <p><strong>Type of drink</strong></p>
+                  <div class="btn-group" btnRadioGroup formControlName="DrinkType"
+                  [(ngModel)]="drinkView.drinkType">
+                    <label *ngFor="let type of drinkType"
+                      class="btn btn-outline-primary mr-2"
+                      btnRadio={{type.type}}>{{type.name}}
+                    </label>
+                  </div>
+                  <div class="error-block" *ngIf="DrinkType.invalid && nextClicked">Please select the type of drink</div>
+                </div>
+
+                <div class="form-group col-12">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control"
+                  formControlName="Name"
+                  [(ngModel)]="drinkView.name">
+                  <span *ngIf="Name.invalid && (Name.touched || nextClicked)"class="error-block">
+                    <span *ngIf="!Name.errors.minlength">Please provide a name</span>
+                  </span>
+                </div>
+                <div class="form-group col-12">
+                  <label for="Style">Style</label>
+                  <input type="text" class="form-control"
+                    formControlName="Style"
+                  [(ngModel)]="drinkView.style">
+                  <span *ngIf="Style.invalid && (Style.touched || nextClicked)"class="error-block">
+                    <span *ngIf="Style.errors.required">Please provide a style</span>
+                  </span>
+                </div>
+                <div class="form-group col-12">
+                  <label for="Price">Price</label>
+                  <input type="number" class="form-control"
+                    formControlName="Price"
+                  [(ngModel)]="drinkView.price">
+                  <span *ngIf="Price.invalid && (Price.touched || nextClicked)"class="error-block">
+                    <span *ngIf="Price.errors.required">Please provide a price</span>
+                  </span>
+                </div>
+
+                <hr>
+
+                <div class="form-group col-12">
+                  <label for="Size">Size</label>
+                  <input type="number" class="form-control"
+                    formControlName="Size"
+                  [(ngModel)]="drinkView.sizeInMl">
+                  <span *ngIf="Size.invalid && (Size.touched || nextClicked)"class="error-block">
+                    <span *ngIf="Size.errors.required">Please provide a size</span>
+                  </span>
+                </div>
+                <div class="form-group col-12">
+                  <label for="Alcohol">Alcohol/Vol</label>
+                  <input type="number" class="form-control"
+                    formControlName="Alcohol"
+                  [(ngModel)]="drinkView.alcContent">
+                  <span *ngIf="Alcohol.invalid && (Alcohol.touched || nextClicked)"class="error-block">
+                    <span *ngIf="Alcohol.errors.required">Please provide an alcohol/vol</span>
+                  </span>
+                </div>
+
+                <hr>
+
+                <div class="form-group col-12">
+                  <label for="Company">Company</label>
+                  <input type="text" class="form-control"
+                    formControlName="Company"
+                  [(ngModel)]="drinkView.company">
+                  <span *ngIf="Company.invalid && (Company.touched || nextClicked)"class="error-block">
+                    <span *ngIf="Company.errors.required">Please provide a company</span>
+                  </span>
+                </div>
+                <div class="form-group col-12">
+                  <label for="CompanyLocation">Company Location</label>
+                  <input type="text" class="form-control"
+                    formControlName="CompanyLocation"
+                  [(ngModel)]="drinkView.companyLocation">
+                  <span *ngIf="CompanyLocation.invalid && (CompanyLocation.touched || nextClicked)"class="error-block">
+                    <span *ngIf="CompanyLocation.errors.required">Please provide a company location</span>
+                  </span>
+                </div>
+
+
+                <div class="form-group col-12 p-2">
+                  <button type="button" (click)="selectTab(1, Overview.valid)" class="btn btn-primary btn-block">Next</button>
+                </div>
+              </tab>
+
+              <tab heading="About" formGroupName="About">
+                <div class="form-group col-12">
+                  <label>Description</label>
+                  <textarea type="text" class="form-control" rows="6" formControlName="Description"></textarea>
+                </div>
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block"
+                  (click)="selectTab(2, About.valid)">Next</button>
+
+                  <button type="button" class="btn btn-primary btn-block"
+                  (click)="selectTab(0, About.valid)">Back</button>
+                </div>
+              </tab>
+
+              <tab heading="Upload photo">
+                <div class="form-group col-12">
+                  <div class="photo-control">
+                    <app-upload-image (onUploadFinished)="uploadFinished($event)"></app-upload-image>
+                    <input type="hidden" class="form-control"
+                    [(ngModel)]="drinkView.image"
+                    [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block"
+                  (click)="selectTab(1, true)">Back</button>
+                  <button type="reset" class="btn btn-primary btn-block"
+                  (click)="selectTab(0, true)">Cancel</button>
+                  <button type="submit" class="btn btn-primary btn-block">Save</button>
+                </div>
+              </tab>
+            </tabset>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 row-width-control-small">
+    <div class="card-header">
+      <h3>
+        Your Drink Preview
+      </h3>
+    </div>
+    <div class="shadow-lg">
+      <app-drink-card [drink]="drinkView" [hideIcons] = "true"></app-drink-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.photo-control{
+  min-height: 300px;
+  vertical-align: middle;
+  text-align: center;
+  border: inset lightblue;
+  margin: 5px;
+}
+
+.row-width-control-large{
+  min-width:300px;
+}
+
+.row-width-control-small{
+  min-width:200px;
+}

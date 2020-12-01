@@ -1,0 +1,31 @@
+
+<div class="card">
+  <div class="card-img-wrapper">
+    <img *ngIf="drink.image" class="card-img-top" [src]="createImgPath(drink.image)">
+    <img *ngIf="!drink.image && drink.drinkType==1" class="card-img-top" src="http://localhost:5000/Resources/DefaultImages/beer-default.gif">
+    <img *ngIf="!drink.image && drink.drinkType==2" class="card-img-top" src="http://localhost:5000/Resources/DefaultImages/wine-default.png">
+    <img *ngIf="!drink.image && drink.drinkType==3" class="card-img-top" src="http://localhost:5000/Resources/DefaultImages/coffee-default.png">
+    <ul *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
+      <li class="list-inline-item">
+        <a routerLink="/drink-detail/{{drink.id}}">
+          <button class="btn btn-primary" >View</button>
+        </a>
+      </li>
+      <li *ngIf="false" class="list-inline-item">
+        <button class="btn btn-primary">Edit</button>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body p-2">
+    <h2 class="mb-0">Name: {{drink.name}}</h2>
+    <h6 class="mt-2">Style: {{drink.style}}</h6>
+    <h6 class="mt-2">Price: {{drink.price}}</h6>
+
+    <hr class="mt-0 mb-2">
+
+    <h6 class="mt-2">Size: {{drink.sizeInMl}}ml</h6>
+    <h6 class="mt-2">Aclohol/Vol: {{drink.alcContent}}</h6>
+
+  </div>
+</div>
+

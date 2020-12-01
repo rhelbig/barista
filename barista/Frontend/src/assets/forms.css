@@ -1,0 +1,20 @@
+.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+.error-block{
+  color: red;
+}
+
+.btn-group > label[ng-reflect-btn-radio] {
+  border-radius: 8px;
+  padding: 0 15px;
+  line-height: 30px;
+}
+
+
+.card-header {
+  height: 42px;
+  padding: 4px 10px !important;
+  background-color: #e6e6e6 !important;
+}

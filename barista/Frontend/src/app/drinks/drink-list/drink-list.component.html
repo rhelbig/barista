@@ -1,0 +1,31 @@
+<label>Filter by: &nbsp; </label>
+<select [(ngModel)]='filterBy'>
+  <option value='name'>Name</option>
+  <option value='style'>Style</option>
+  <option value='price'>Price</option>
+</select>
+<label> &nbsp; value &nbsp; </label>
+<input [(ngModel)]='filterValue'>
+<button class="btn" (click)='onFilter()'>Apply</button>
+<button class="btn" (click)='onFilterReset()'>Reset</button>
+<br>
+
+<label>Sorty by &nbsp; </label>
+<select [(ngModel)]='sortBy'>
+  <option value=''>--Select--</option>
+  <option value='name'>Name</option>
+  <option value='style'>Style</option>
+  <option value='price'>Price</option>
+</select>
+<label> &nbsp; Descending &nbsp; </label>
+<input type="checkbox" [value]="descending" (change)="onDescendingChanged($event)" />
+<hr>
+
+<div class="row">
+  <div *ngFor="let drink of
+  ((drinks|filter:filterValueParam:filterByParam)
+    |sorting:sortBy:descending)"
+  class="shadow-lg col-sm-4 p-3">
+    <app-drink-card [drink]="drink"></app-drink-card>
+  </div>
+</div>

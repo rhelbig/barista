@@ -1,0 +1,79 @@
+<div class="row shaddow">
+  <div class="col-sm-4 p-0">
+    <div class="card">
+      <div class="car-img-wrapper">
+        <img *ngIf="drink.image" src="assets/drinks/{{drink.image}}">
+        <img *ngIf="!drink.image && drink.drinkType==1" src="assets/drinks/beer-default.gif">
+        <img *ngIf="!drink.image && drink.drinkType==2" src="assets/drinks/wine-default.png">
+        <img *ngIf="!drink.image && drink.drinkType==3" src="assets/drinks/coffee-default.png">
+
+      </div>
+      <div class="card-body">
+        <h1 class="title-name">{{drink.name}}</h1>
+
+      </div>
+      <div class="card-footer">
+        <div class="btn-group d-flex">
+          <button class="btn btn-primary">(TODO)Like</button>
+        <button class="btn btn-success">(TODO)Message</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-8 p-0">
+    <div class="tab-panel">
+      <tabset class="member-tabset">
+        <tab heading="Overview">
+          <h1>Overview</h1>
+          <div class="row">
+            <div class="col-sm-6">
+              <div>
+                <strong>Name: </strong>{{drink.name}}
+              </div>
+              <div>
+                <strong>Style: </strong>{{drink.style}}
+              </div>
+              <div>
+                <strong>Price: </strong>${{drink.price}}
+              </div>
+              <hr>
+              <div>
+                <strong>Size: </strong> {{drink.sizeInMl}} ml
+              </div>
+              <div>
+                <strong>Alcohol/Vol: </strong> {{drink.alcContent}} %
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div>
+                <strong>Company: </strong> {{drink.company}}
+              </div>
+              <div>
+                <strong>Company Location: </strong> {{drink.companyLocation}}
+              </div>
+            </div>
+
+          </div>
+
+        </tab>
+        <tab heading="About">
+          <h1>About</h1>
+          <div>
+            <p>
+              {{drink.description}}
+            </p>
+          </div>
+        </tab>
+        <tab heading="Photo">
+          <carousel [isAnimated]="true" class="carousel-container">
+            <slide *ngFor="let image of imageData">
+              <img (click)="openImageFullscreen(image.srcUrl)" class="carousel-image" src={{image.srcUrl}} alt="carousel image">
+            </slide>
+          </carousel>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
