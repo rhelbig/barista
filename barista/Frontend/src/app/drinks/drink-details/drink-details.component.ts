@@ -62,16 +62,16 @@ export class DrinkDetailsComponent implements OnInit {
   getImageInfo() {
     return [
       {
-        srcUrl: 'assets/drinks/beer-default.gif',
-        previewUrl: 'assets/drinks/beer-default.gif'
+        srcUrl: 'http://localhost:5000/Resources/DefaultImages/beer-default.gif',
+        previewUrl: 'http://localhost:5000/Resources/DefaultImages/beer-default.gif'
       },
       {
-        srcUrl: 'assets/drinks/wine-default.png',
-        previewUrl: 'assets/drinks/wine-default.png'
+        srcUrl: 'http://localhost:5000/Resources/DefaultImages/wine-default.png',
+        previewUrl: 'http://localhost:5000/Resources/DefaultImages/wine-default.png'
       },
       {
-        srcUrl: 'assets/drinks/coffee-default.png',
-        previewUrl: 'assets/drinks/coffee-default.png'
+        srcUrl: 'http://localhost:5000/Resources/DefaultImages/coffee-default.png',
+        previewUrl: 'http://localhost:5000/Resources/DefaultImages/coffee-default.png'
       }
     ]
   }
